@@ -1,0 +1,50 @@
+export const site = {
+	name: "NEO LUXE",
+	phoneDisplay: "070-8542-1016",
+	phoneTel: "07085421016",
+	postal: "〒790-0878",
+	area: "愛媛県松山市勝山町",
+	station: "伊予鉄道環状線 勝山町駅",
+	walk: "徒歩8分",
+	hoursWeekday: "平日 10:00 – LAST",
+	hoursHoliday: "土日祝 10:00 – LAST",
+	closed: "なし",
+	instagram: "https://www.instagram.com/mens.este.luxe/",
+	instagramHandle: "@mens.este.luxe",
+	line: "https://line.me/R/ti/p/@682szlnv",
+	lineHandle: "@682szlnv",
+	ekichika: "https://ranking-mensesthe.jp/shop/48308/",
+	estama: "https://estama.jp/shop/29585/",
+	description:
+		"松山市勝山町のメンズエステ NEO LUXE。完全予約制・完全個室。勝山町駅徒歩8分。営業は10:00からLAST、定休日なし。ご予約は070-8542-1016。",
+} as const;
+
+export const courses = [
+	{
+		id: "standard-90",
+		index: "01",
+		name: "スタンダードリュクスコース",
+		minutes: "90",
+		price: "15,000",
+		text: "厳選されたセラピストによる、上質なリラクゼーション。初めての方にも。",
+		signature: false,
+	},
+	{
+		id: "leonard-100",
+		index: "02",
+		name: "レオナールリュクスコース",
+		minutes: "100",
+		price: "20,000",
+		text: "特別なオイルで味わう、当店のシグネチャー。より深く、より贅沢なトリートメントです。",
+		signature: true,
+	},
+	{
+		id: "leonard-130",
+		index: "03",
+		name: "レオナールリュクスコース",
+		minutes: "130",
+		price: "25,000",
+		text: "時間を惜しまず、心身がほどけるまで。余韻まで味わうロングコースです。",
+		signature: false,
+	},
+] as const;

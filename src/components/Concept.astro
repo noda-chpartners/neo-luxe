@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import brandVisual from "../assets/images/line_oa_chat_261002_183615.jpg";
+---
+
+<section class="section concept" id="concept">
+	<div class="wrap wrap--narrow">
+		<header class="sec-head" data-reveal>
+			<p class="sec-en">Concept</p>
+			<h2>極上は、静けさのなかに。</h2>
+			<span class="ornament" aria-hidden="true"></span>
+		</header>
+		<div class="concept__copy" data-reveal>
+			<p class="concept__lead">NEO LUXEは、松山・勝山町にひらく、<br />ふたりきりのラグジュアリーサロンです。</p>
+			<p>
+				厳選されたセラピストが、技術とおもてなし、そして静かな美意識でお迎えします。扉を閉じれば、そこは日常から切り離された個室。極上のトリートメントとともに、心までほどける時間をお過ごしください。
+			</p>
+		</div>
+		<ul class="pillars" data-reveal-stagger>
+			<li data-reveal-item>
+				<h3>完全個室</h3>
+				<p>ご予約いただいた方だけが過ごす、閉じた部屋です。</p>
+			</li>
+			<li data-reveal-item>
+				<h3>厳選されたセラピスト</h3>
+				<p>技術、おもてなし、美意識。その三つを基準にお迎えしています。</p>
+			</li>
+			<li data-reveal-item>
+				<h3>無香料への配慮</h3>
+				<p>アロマオイルとボディーソープは無香料です。</p>
+			</li>
+		</ul>
+	</div>
+	<figure class="bleed" data-reveal>
+		<Image
+			src={brandVisual}
+			alt="白いドレスのセラピストと、極上のひとときを描いたNEO LUXEのブランドビジュアル"
+			widths={[640, 1100, 1600]}
+			sizes="100vw"
+			quality="high"
+			layout="full-width"
+		/>
+	</figure>
+</section>

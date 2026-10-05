@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import photoOil from "../assets/images/line_oa_chat_261002_183623_upscayl_2x_upscayl-standard-4x.png";
+import photoRoom from "../assets/images/line_oa_chat_261002_183629.jpg";
+import photoPlant from "../assets/images/line_oa_chat_261002_183627.jpg";
+---
+
+<section class="section space" id="space">
+	<div class="wrap">
+		<header class="sec-head" data-reveal>
+			<p class="sec-en">Space</p>
+			<h2>シンプルに、贅沢を置く。</h2>
+			<span class="ornament" aria-hidden="true"></span>
+		</header>
+		<p class="space__lead" data-reveal>
+			高級感を足しすぎない、静かな完全個室。木の温もりと白い光、清潔な寝具。肩の力を抜いていただけるよう、部屋はいつも整えてお待ちしています。
+		</p>
+		<div class="album">
+			<figure data-reveal>
+				<Image
+					src={photoRoom}
+					alt="白いラグの上に置かれた、ブラウンの枕がある施術マット"
+					widths={[640, 960, 1170]}
+					sizes="(min-width: 1100px) 1040px, 100vw"
+					quality="high"
+					layout="full-width"
+					class="album__plain"
+				/>
+				<figcaption>完全個室</figcaption>
+			</figure>
+			<div class="album__pair">
+				<figure data-reveal>
+					<div class="album__shot" data-parallax-wrap>
+						<Image
+							src={photoOil}
+							alt="ポンプボトルのオイルと巻かれたタオル、柔らかな光の施術スペース"
+							widths={[640, 960, 1280]}
+							sizes="(min-width: 720px) 40vw, 50vw"
+							quality="high"
+							layout="none"
+							class="album__img album__img--oil"
+							data-parallax
+						/>
+					</div>
+				</figure>
+				<figure data-reveal>
+					<div class="album__shot" data-parallax-wrap>
+						<Image
+							src={photoPlant}
+							alt="木のディスペンサーと観葉植物のある、明るい室内"
+							widths={[480, 800]}
+							sizes="(min-width: 720px) 40vw, 50vw"
+							quality="high"
+							layout="none"
+							class="album__img album__img--plant"
+							data-parallax
+						/>
+					</div>
+				</figure>
+			</div>
+		</div>
+	</div>
+</section>

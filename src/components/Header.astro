@@ -1,0 +1,39 @@
+---
+import Logo from "./Logo.astro";
+import Icon from "./Icon.astro";
+import { site } from "../data/site";
+---
+
+<header class="header" data-header>
+	<nav class="nav" id="site-nav" data-nav aria-label="メイン">
+		<a class="nav__link" href="#concept">コンセプト</a>
+		<a class="nav__link" href="#course">コース</a>
+		<a class="nav__link" href="#space">空間</a>
+		<a class="nav__link" href="#access">アクセス</a>
+		<a class="nav__link" href="#reserve">ご予約</a>
+		<div class="nav__contact">
+			<a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
+			<a href={site.line} target="_blank" rel="noopener noreferrer">LINE {site.lineHandle}</a>
+		</div>
+	</nav>
+	<Logo />
+	<div class="header__tools">
+		<a class="header__call" href={`tel:${site.phoneTel}`} aria-label={`電話する ${site.phoneDisplay}`}>
+			<Icon name="phone" />
+		</a>
+		<a class="btn btn--gold header__reserve" href="#reserve">ご予約</a>
+		<button
+			class="nav-toggle"
+			type="button"
+			aria-expanded="false"
+			aria-controls="site-nav"
+			data-nav-toggle
+		>
+			<span class="nav-toggle__lines" aria-hidden="true">
+				<span></span>
+				<span></span>
+			</span>
+			<span class="sr-only">メニュー</span>
+		</button>
+	</div>
+</header>

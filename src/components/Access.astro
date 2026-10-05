@@ -1,0 +1,71 @@
+---
+import { site } from "../data/site";
+
+const mapSrc =
+	"https://maps.google.com/maps?q=%E4%BC%8A%E4%BA%88%E9%89%84%E9%81%93%20%E5%8B%9D%E5%B1%B1%E7%94%BA%E9%A7%85&hl=ja&z=16&output=embed";
+---
+
+<section class="section access" id="access">
+	<div class="wrap">
+		<header class="sec-head" data-reveal>
+			<p class="sec-en">Access</p>
+			<h2>勝山町駅から、徒歩8分。</h2>
+			<span class="ornament" aria-hidden="true"></span>
+		</header>
+		<dl class="info-grid" data-reveal>
+			<div>
+				<dt>店名</dt>
+				<dd>{site.name}</dd>
+			</div>
+			<div>
+				<dt>電話</dt>
+				<dd><a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a></dd>
+			</div>
+			<div>
+				<dt>住所</dt>
+				<dd>
+					{site.postal}<br />
+					{site.area}<br />
+					<span class="muted">番地以降は、ご予約の際にご案内いたします。</span>
+				</dd>
+			</div>
+			<div>
+				<dt>最寄り</dt>
+				<dd>
+					{site.station}<br />
+					{site.walk}
+				</dd>
+			</div>
+			<div>
+				<dt>営業</dt>
+				<dd>
+					{site.hoursWeekday}<br />
+					{site.hoursHoliday}
+				</dd>
+			</div>
+			<div>
+				<dt>定休日</dt>
+				<dd>{site.closed}</dd>
+			</div>
+			<div>
+				<dt>お支払い</dt>
+				<dd>現金・クレジットカード</dd>
+			</div>
+			<div>
+				<dt>SNS</dt>
+				<dd>
+					<a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram {site.instagramHandle}</a><br />
+					<a href={site.line} target="_blank" rel="noopener noreferrer">LINE {site.lineHandle}</a>
+				</dd>
+			</div>
+		</dl>
+		<div class="map" data-reveal data-lenis-prevent>
+			<iframe
+				title="勝山町駅周辺の地図"
+				src={mapSrc}
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"
+			></iframe>
+		</div>
+	</div>
+</section>

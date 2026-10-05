@@ -1,0 +1,64 @@
+---
+interface Props {
+	name: "phone" | "line" | "instagram" | "train" | "clock" | "calendar" | "pin";
+	class?: string;
+}
+
+const { name, class: className = "icon" } = Astro.props;
+---
+
+<svg class={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+	{
+		name === "phone" && (
+			<path d="M8.2 3.8H6.4A1.4 1.4 0 0 0 5 5.2v1.1C5 13.2 9.8 18 16.7 18h1.1a1.4 1.4 0 0 0 1.4-1.4v-1.8l-3.1-1.1-1.2 1.2a11.2 11.2 0 0 1-4.8-4.8l1.2-1.2-1.1-3.1Z" />
+		)
+	}
+	{
+		name === "line" && (
+			<path d="M5 8.2A3.2 3.2 0 0 1 8.2 5h7.6A3.2 3.2 0 0 1 19 8.2v4.6A3.2 3.2 0 0 1 15.8 16H11l-3.4 2.6V16H8.2A3.2 3.2 0 0 1 5 12.8V8.2Z" />
+		)
+	}
+	{
+		name === "instagram" && (
+			<>
+				<rect x="4" y="4" width="16" height="16" rx="4" />
+				<circle cx="12" cy="12" r="3.4" />
+				<circle cx="17.2" cy="6.8" r="0.8" fill="currentColor" stroke="none" />
+			</>
+		)
+	}
+	{
+		name === "train" && (
+			<>
+				<rect x="6" y="3.5" width="12" height="12.5" rx="2" />
+				<path d="M6 11h12M8.2 20.2 9.6 16.5M15.8 20.2 14.4 16.5" />
+				<circle cx="9" cy="13.6" r="0.7" fill="currentColor" stroke="none" />
+				<circle cx="15" cy="13.6" r="0.7" fill="currentColor" stroke="none" />
+			</>
+		)
+	}
+	{
+		name === "clock" && (
+			<>
+				<circle cx="12" cy="12" r="8" />
+				<path d="M12 8v4.4l2.8 1.8" />
+			</>
+		)
+	}
+	{
+		name === "calendar" && (
+			<>
+				<rect x="4" y="5" width="16" height="14.5" rx="1.6" />
+				<path d="M8 3.6V6.2M16 3.6V6.2M4 9.5h16" />
+			</>
+		)
+	}
+	{
+		name === "pin" && (
+			<>
+				<path d="M12 20.5s5.5-4.7 5.5-8.4a5.5 5.5 0 0 0-11 0c0 3.7 5.5 8.4 5.5 8.4Z" />
+				<circle cx="12" cy="11.8" r="1.7" />
+			</>
+		)
+	}
+</svg>

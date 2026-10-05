@@ -1,0 +1,67 @@
+---
+import { getImage } from "astro:assets";
+import Icon from "./Icon.astro";
+import { site } from "../data/site";
+import desktopVisual from "../assets/images/hero-desktop.jpg";
+import tabletVisual from "../assets/images/hero-tablet.jpg";
+import phoneVisual from "../assets/images/hero-phone.jpg";
+
+const [desktopHero, tabletHero, phoneHero] = await Promise.all([
+	getImage({ src: desktopVisual, width: 1280, height: 720, format: "webp", quality: "high" }),
+	getImage({ src: tabletVisual, width: 1152, height: 864, format: "webp", quality: "high" }),
+	getImage({ src: phoneVisual, width: 720, height: 1280, format: "webp", quality: "high" }),
+]);
+---
+
+<div class="hero-stage" id="top">
+	<div class="hero-fixed" aria-hidden="true">
+		<picture>
+			<source media="(min-width: 1100px)" srcset={desktopHero.src} type="image/webp" />
+			<source media="(min-width: 700px)" srcset={tabletHero.src} type="image/webp" />
+			<img
+				src={phoneHero.src}
+				alt=""
+				width={phoneHero.attributes.width}
+				height={phoneHero.attributes.height}
+				class="hero-fixed__img"
+				decoding="async"
+				fetchpriority="high"
+			/>
+		</picture>
+	</div>
+	<section class="hero" aria-label="NEO LUXE">
+		<h1 class="sr-only">NEO LUXE 松山メンズエステ</h1>
+		<div class="hero__panel" data-hero="fade">
+			<p class="hero__lead">癒しの、その先へ。</p>
+			<p class="hero__sub">完全予約制・完全個室のメンズリラクゼーション</p>
+			<div class="hero__actions">
+				<a class="btn btn--gold" href={`tel:${site.phoneTel}`}>
+					<Icon name="phone" />
+					電話で予約
+				</a>
+				<a class="btn btn--line" href={site.line} target="_blank" rel="noopener noreferrer">
+					<Icon name="line" />
+					LINEで予約
+				</a>
+			</div>
+		</div>
+	</section>
+</div>
+<ul class="strip">
+	<li>
+		<span>最寄り</span>
+		<strong>勝山町駅 {site.walk}</strong>
+	</li>
+	<li>
+		<span>営業</span>
+		<strong>10:00 – LAST</strong>
+	</li>
+	<li>
+		<span>定休日</span>
+		<strong>なし</strong>
+	</li>
+	<li>
+		<span>電話</span>
+		<strong><a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a></strong>
+	</li>
+</ul>

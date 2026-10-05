@@ -1,0 +1,15 @@
+---
+import { site } from "../data/site";
+---
+
+<footer class="footer">
+	<p class="footer__name">NEO LUXE</p>
+	<p>{site.postal} {site.area}</p>
+	<ul class="footer__links">
+		<li><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram</a></li>
+		<li><a href={site.line} target="_blank" rel="noopener noreferrer">LINE</a></li>
+		<li><a href={site.ekichika} target="_blank" rel="noopener noreferrer">駅チカ</a></li>
+		<li><a href={site.estama} target="_blank" rel="noopener noreferrer">エステ魂</a></li>
+	</ul>
+	<p class="footer__copy">© {new Date().getFullYear()} NEO LUXE</p>
+</footer>

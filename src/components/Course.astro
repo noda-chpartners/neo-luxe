@@ -1,0 +1,35 @@
+---
+import { courses } from "../data/site";
+---
+
+<section class="section course" id="course">
+	<div class="wrap">
+		<header class="sec-head" data-reveal>
+			<p class="sec-en">Course</p>
+			<h2>三つのリュクスコース</h2>
+			<span class="ornament" aria-hidden="true"></span>
+		</header>
+		<ol class="menu" data-reveal-stagger>
+			{
+				courses.map((course) => (
+					<li class:list={["menu__item", course.signature && "menu__item--signature"]} data-reveal-item>
+						<p class="menu__time">
+							<span>{course.minutes}</span>分
+						</p>
+						<div class="menu__body">
+							<div class="menu__head">
+								<h3>
+									{course.name}
+									{course.signature && <em>Signature</em>}
+								</h3>
+								<p class="menu__price">¥{course.price}</p>
+							</div>
+							<p class="menu__text">{course.text}</p>
+						</div>
+					</li>
+				))
+			}
+		</ol>
+		<p class="note" data-reveal>表示は各コースの基本料金です。指名料・オプション・延長は、お電話またはLINEにてご案内します。</p>
+	</div>
+</section>
