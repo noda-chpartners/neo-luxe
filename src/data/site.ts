@@ -1,5 +1,7 @@
 export const site = {
 	name: "NEO LUXE",
+	url: "https://neo-luxe.pages.dev",
+	title: "松山メンズエステ NEO LUXE｜勝山町・完全個室",
 	phoneDisplay: "070-8542-1016",
 	phoneTel: "07085421016",
 	postal: "〒790-0878",

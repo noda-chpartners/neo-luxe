@@ -1,23 +1,63 @@
 ---
 import "../styles/global.scss";
-import { site } from "../data/site";
+import { courses, site } from "../data/site";
+
+const canonical = new URL("/", site.url).href;
+const ogImage = new URL("/ogp.jpg", site.url).href;
 
 const jsonLd = {
 	"@context": "https://schema.org",
-	"@type": "HealthAndBeautyBusiness",
-	name: site.name,
-	description: site.description,
-	telephone: "+817085421016",
-	image: "/ogp.jpg",
-	address: {
-		"@type": "PostalAddress",
-		postalCode: "790-0878",
-		addressCountry: "JP",
-		addressRegion: "愛媛県",
-		addressLocality: "松山市",
-		streetAddress: "勝山町",
-	},
-	sameAs: [site.instagram, site.ekichika, site.estama],
+	"@graph": [
+		{
+			"@type": "WebSite",
+			"@id": `${site.url}/#website`,
+			url: canonical,
+			name: site.name,
+			description: site.description,
+			inLanguage: "ja",
+			publisher: { "@id": `${site.url}/#business` },
+		},
+		{
+			"@type": ["HealthAndBeautyBusiness", "BeautySalon"],
+			"@id": `${site.url}/#business`,
+			name: site.name,
+			url: canonical,
+			image: ogImage,
+			logo: new URL("/favicon.svg", site.url).href,
+			description: site.description,
+			telephone: "+817085421016",
+			priceRange: "¥15,000–¥25,000",
+			currenciesAccepted: "JPY",
+			paymentAccepted: "現金, クレジットカード",
+			address: {
+				"@type": "PostalAddress",
+				postalCode: "790-0878",
+				addressCountry: "JP",
+				addressRegion: "愛媛県",
+				addressLocality: "松山市",
+				streetAddress: "勝山町",
+			},
+			areaServed: {
+				"@type": "City",
+				name: "松山市",
+				containedInPlace: { "@type": "AdministrativeArea", name: "愛媛県" },
+			},
+			hasOfferCatalog: {
+				"@type": "OfferCatalog",
+				name: "コース",
+				itemListElement: courses.map((course) => ({
+					"@type": "Offer",
+					name: `${course.name} ${course.minutes}分`,
+					description: course.text,
+					price: Number(course.price.replaceAll(",", "")),
+					priceCurrency: "JPY",
+					url: `${canonical}#course`,
+					availability: "https://schema.org/InStock",
+				})),
+			},
+			sameAs: [site.instagram, site.line, site.ekichika, site.estama],
+		},
+	],
 };
 ---
 
@@ -28,9 +68,11 @@ const jsonLd = {
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={site.description} />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
 		<meta name="theme-color" content="#fbf7f0" />
 		<meta name="format-detection" content="telephone=no" />
-		<title>NEO LUXE | 松山メンズエステ</title>
+		<title>{site.title}</title>
+		<link rel="canonical" href={canonical} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,15 +82,19 @@ const jsonLd = {
 		/>
 		<meta property="og:type" content="website" />
 		<meta property="og:locale" content="ja_JP" />
-		<meta property="og:title" content="NEO LUXE | 松山メンズエステ" />
+		<meta property="og:site_name" content={site.name} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:title" content={site.title} />
 		<meta property="og:description" content={site.description} />
-		<meta property="og:image" content="/ogp.jpg" />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:alt" content="NEO LUXE 松山メンズエステ" />
 		<meta property="og:image:width" content="1000" />
 		<meta property="og:image:height" content="500" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="NEO LUXE | 松山メンズエステ" />
+		<meta name="twitter:title" content={site.title} />
 		<meta name="twitter:description" content={site.description} />
-		<meta name="twitter:image" content="/ogp.jpg" />
+		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:image:alt" content="NEO LUXE 松山メンズエステ" />
 		<script is:inline>
 			document.documentElement.classList.add("js");
 		</script>
