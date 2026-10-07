@@ -481,10 +481,14 @@ button {
 
 .concept__lead {
 	font-family: var(--font-serif);
-	font-size: clamp(1.12rem, 2vw, 1.35rem);
-	letter-spacing: 0.08em;
-	line-height: 2;
+	font-size: clamp(1.05rem, 2vw, 1.35rem);
+	letter-spacing: 0.06em;
+	line-height: 1.9;
 	color: var(--ink);
+}
+
+.concept__lead span {
+	display: block;
 }
 
 .pillars {
@@ -777,11 +781,36 @@ button {
 }
 
 .reserve__actions {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: 1fr;
 	gap: 0.65rem;
-	margin-top: 1.6rem;
+	width: min(34rem, 100%);
+	margin: 1.6rem auto 0;
+}
+
+.reserve__actions .btn {
+	width: 100%;
+}
+
+.reserve__sns {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.45rem;
+	margin-top: 0.95rem;
+	font-size: 0.78rem;
+	letter-spacing: 0.06em;
+	color: var(--gold-deep);
+}
+
+.reserve__sns:hover {
+	color: var(--ink);
+}
+
+@media (min-width: 560px) {
+	.reserve__actions {
+		grid-template-columns: 1fr 1fr;
+	}
 }
 
 .reserve__note {

@@ -8,7 +8,7 @@ import { site } from "../data/site";
 		<div class="reserve__panel" data-reveal>
 			<p class="sec-en">Reserve</p>
 			<h2>ご予約・お問い合わせ</h2>
-			<p class="reserve__lead">ご新規も、ご指名も。お電話、またはLINE公式アカウントで承ります。</p>
+			<p class="reserve__lead">ご新規も、ご指名も。<br />お電話、LINE、または予約フォームで承ります。</p>
 			<a class="reserve__tel" href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
 			<p class="reserve__hours">
 				<span>{site.hoursWeekday}</span>
@@ -24,11 +24,19 @@ import { site } from "../data/site";
 					<Icon name="line" />
 					LINE {site.lineHandle}
 				</a>
-				<a class="btn btn--line" href={site.instagram} target="_blank" rel="noopener noreferrer">
-					<Icon name="instagram" />
-					Instagram
+				<a class="btn btn--line" href={site.estamaReserve} target="_blank" rel="noopener noreferrer">
+					<Icon name="calendar" />
+					エステ魂で予約
+				</a>
+				<a class="btn btn--line" href={site.ekichikaReserve} target="_blank" rel="noopener noreferrer">
+					<Icon name="calendar" />
+					駅チカで予約
 				</a>
 			</div>
+			<a class="reserve__sns" href={site.instagram} target="_blank" rel="noopener noreferrer">
+				<Icon name="instagram" />
+				Instagram {site.instagramHandle}
+			</a>
 			<p class="reserve__note">当日のキャンセルは、キャンセル料を申し受ける場合がございます。変更・取消はお早めにご連絡ください。</p>
 		</div>
 	</div>

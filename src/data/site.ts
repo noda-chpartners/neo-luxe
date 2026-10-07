@@ -16,7 +16,9 @@ export const site = {
 	line: "https://line.me/R/ti/p/@682szlnv",
 	lineHandle: "@682szlnv",
 	ekichika: "https://ranking-mensesthe.jp/shop/48308/",
+	ekichikaReserve: "https://e-yoyaku.jp/shop/18727/",
 	estama: "https://estama.jp/shop/29585/",
+	estamaReserve: "https://estama.jp/shop/29585/reserve/",
 	description:
 		"松山市勝山町のメンズエステ NEO LUXE。完全予約制・完全個室。勝山町駅徒歩8分。営業は10:00からLAST、定休日なし。ご予約は070-8542-1016。",
 } as const;
@@ -41,12 +43,12 @@ export const courses = [
 		signature: true,
 	},
 	{
-		id: "leonard-130",
+		id: "almirage-70",
 		index: "03",
-		name: "レオナールリュクスコース",
-		minutes: "130",
-		price: "25,000",
-		text: "時間を惜しまず、心身がほどけるまで。余韻まで味わうロングコースです。",
+		name: "アルミラージリュクスコース",
+		minutes: "70",
+		price: "18,000",
+		text: "アルミラージだけの、70分のコースです。",
 		signature: false,
 	},
 ] as const;
