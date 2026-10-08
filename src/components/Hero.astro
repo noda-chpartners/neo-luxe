@@ -33,7 +33,7 @@ const [desktopHero, tabletHero, phoneHero] = await Promise.all([
 		<h1 class="sr-only">NEO LUXE 松山メンズエステ</h1>
 		<div class="hero__panel" data-hero="fade">
 			<p class="hero__lead">癒しの、その先へ。</p>
-			<p class="hero__sub">完全予約制・完全個室のメンズリラクゼーション</p>
+			<p class="hero__sub"><span>完全予約制・完全個室の</span><span>メンズリラクゼーション</span></p>
 			<div class="hero__actions">
 				<a class="btn btn--gold" href={`tel:${site.phoneTel}`}>
 					<Icon name="phone" />
@@ -42,6 +42,14 @@ const [desktopHero, tabletHero, phoneHero] = await Promise.all([
 				<a class="btn btn--line" href={site.line} target="_blank" rel="noopener noreferrer">
 					<Icon name="line" />
 					LINEで予約
+				</a>
+				<a class="btn btn--line" href={site.estamaReserve} target="_blank" rel="noopener noreferrer">
+					<Icon name="calendar" />
+					エステ魂で予約
+				</a>
+				<a class="btn btn--line" href={site.ekichikaReserve} target="_blank" rel="noopener noreferrer">
+					<Icon name="calendar" />
+					駅チカで予約
 				</a>
 			</div>
 		</div>

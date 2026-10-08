@@ -411,15 +411,32 @@ button {
 	margin-top: 0.35rem;
 	color: var(--muted);
 	font-size: 0.82rem;
-	letter-spacing: 0.06em;
+	letter-spacing: 0.04em;
+}
+
+.hero__sub span {
+	display: inline;
 }
 
 .hero__actions {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 0.65rem;
-	margin-top: 0.9rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.5rem;
+	margin-top: 0.85rem;
+}
+
+.hero__actions .btn {
+	width: 100%;
+	min-height: 42px;
+	padding: 0 0.45rem;
+	font-size: 0.72rem;
+	white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+	.hero__sub span {
+		display: block;
+	}
 }
 
 .strip {
